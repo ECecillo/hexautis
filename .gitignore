@@ -19,3 +19,11 @@
 
 # Go workspace file
 go.work
+
+# MacOs
+
+.DS_STORE
+
+# Build output directory
+
+bin
