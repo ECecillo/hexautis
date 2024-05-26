@@ -17,8 +17,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -v -o bin/hexautis ./cmd/main.go
 
 FROM alpine:latest
 
-CMD ["/bin/sh"]
-
 RUN adduser -D -u 12345 -g 12345 hexautis
 
 # Copy the binary to the production image from the builder stage.
