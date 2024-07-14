@@ -6,6 +6,9 @@ import (
 	"io"
 	"log"
 	"os"
+
+	"github.com/ECecillo/hexautis/format"
+	"github.com/ECecillo/hexautis/parser"
 )
 
 func Start(in io.Reader, out io.Writer) {
@@ -28,6 +31,14 @@ func Start(in io.Reader, out io.Writer) {
 			os.Exit(0)
 		}
 
-		fmt.Printf("So you said : %s \n", line)
+		// fmt.Printf("String Value : %s, Hexadecimal Content : %# x \n", line, line)
+		fmt.Println(format.Hex(line))
+
+		fmt.Println("")
+		result, err := parser.HexToString(line)
+		if err != nil {
+			fmt.Println("Error : ", err)
+		}
+		fmt.Println("String value : ", string(result))
 	}
 }

@@ -6,6 +6,9 @@ build:
 run:
 	@go run cmd/main.go
 
+test:
+	@go test -v ./...
+
 # Docker
 
 build-image:
